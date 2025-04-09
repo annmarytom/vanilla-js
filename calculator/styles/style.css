@@ -1,0 +1,124 @@
+:root {
+    --body-bg-color: rgb(248 248 248);
+    --primary: #FFF;
+    --secondary: #525298;
+    --display-bg: #FFF
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--body-bg-color);
+}
+
+.container {
+    width: 300px;
+    background-color: rgb(232, 224, 224);
+    border: 0.5px solid gray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.5rem;
+}
+
+.calc-display {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    padding: 0rem 1rem;
+    border-radius: 10px;
+    background-color: var(--display-bg);
+}
+
+.calc-display .calc-upper-div-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 165px;
+
+}
+
+.calc-keyboard {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.special-operators {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.special-operators .calc-spec-btn {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    justify-content: center;
+    color: gray;
+    width: 3rem;
+    height: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+}
+
+.calc-btn-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.calc-btn-grid .calc-btn-number {
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-btn-grid .calc-btn-operator {
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-btn-grid .calc-btn-acent {
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
