@@ -1,10 +1,21 @@
 :root {
     --body-bg-color: rgb(248 248 248);
+    --container-bg-color:rgb(232, 224, 224);
     --primary: #FFF;
     --secondary: #525298;
-    --display-bg: #FFF
+    --secondary-bg-color:hsl(39, 100%, 50%);
+    --display-bg: #FFF;
+    --theme-btn-bg: rgb(230, 221, 221);
+    --display-keyboard-bg:#e9e4e4;
 }
-
+:root .darkmode{
+    --body-bg-color: rgb(248 248 248);
+    --container-bg-color:rgb(58, 56, 56);
+    --primary: #FFF;
+    --secondary: #525298;
+    --display-bg: #FFF;
+    --theme-btn-bg: rgb(230, 221, 221);
+}
 * {
     box-sizing: border-box;
 }
@@ -22,7 +33,7 @@ body {
 
 .container {
     width: 300px;
-    background-color: rgb(232, 224, 224);
+    background-color:var(--container-bg-color) ;
     border: 0.5px solid gray;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0.5rem;
@@ -33,7 +44,7 @@ body {
     flex-direction: column;
     align-items: end;
     gap: 1rem;
-    padding: 0rem 1rem;
+    padding: 0rem 1rem 1.5rem 1rem;
     border-radius: 10px;
     background-color: var(--display-bg);
 }
@@ -45,13 +56,46 @@ body {
     align-items: center;
     padding: 1rem 0;
     gap: 165px;
+}
 
+.calc-display-controls {
+    margin-bottom: 20px;
+}
+
+.calc-display-controls .theme-btn {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--theme-btn-bg);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.4rem;
+}
+
+.calc-display-controls .theme-btn:hover {
+    filter: brightness(90%);
+}
+
+.calc-display-controls .theme-btn i:last-child {
+    display: none;
+}
+
+.darkmode .calc-display-controls .theme-btn i:first-child {
+    display: block;
+}
+
+.darkmode .calc-display-controls .theme-btn i:last-child {
+    display: none;
 }
 
 .calc-keyboard {
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    background-color:var(--display-keyboard-bg);
     gap: 1rem;
 }
 
@@ -110,7 +154,7 @@ body {
 }
 
 .calc-btn-grid .calc-btn-acent {
-    background-color: var(--secondary);
+    background-color: var(--secondary-bg-color);
     color: var(--primary);
     border-radius: 0.5rem;
     cursor: pointer;
