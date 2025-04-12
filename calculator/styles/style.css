@@ -1,21 +1,26 @@
 :root {
     --body-bg-color: rgb(248 248 248);
-    --container-bg-color:rgb(232, 224, 224);
+    --container-bg-color: rgb(232, 224, 224);
     --primary: #FFF;
     --secondary: #525298;
-    --secondary-bg-color:hsl(39, 100%, 50%);
+    --secondary-bg-color: hsl(39, 100%, 50%);
     --display-bg: #FFF;
     --theme-btn-bg: rgb(230, 221, 221);
-    --display-keyboard-bg:#e9e4e4;
+    --display-keyboard-bg: #e9e4e4;
+    --input-display-font-color: rgb(14, 14, 14);
+
 }
-:root .darkmode{
+
+.darkmode {
     --body-bg-color: rgb(248 248 248);
-    --container-bg-color:rgb(58, 56, 56);
+    --container-bg-color: #1e1c28;
     --primary: #FFF;
     --secondary: #525298;
-    --display-bg: #FFF;
+    --display-bg: #262837;
     --theme-btn-bg: rgb(230, 221, 221);
+    --input-display-font-color: rgb(245, 230, 230);
 }
+
 * {
     box-sizing: border-box;
 }
@@ -33,7 +38,7 @@ body {
 
 .container {
     width: 300px;
-    background-color:var(--container-bg-color) ;
+    background-color: var(--container-bg-color);
     border: 0.5px solid gray;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0.5rem;
@@ -47,6 +52,7 @@ body {
     padding: 0rem 1rem 1.5rem 1rem;
     border-radius: 10px;
     background-color: var(--display-bg);
+    height: 200px;
 }
 
 .calc-display .calc-upper-div-controls {
@@ -58,8 +64,12 @@ body {
     gap: 165px;
 }
 
-.calc-display-controls {
-    margin-bottom: 20px;
+.calc-upper-div-controls .left-items {
+    color: var(--input-display-font-color);
+}
+
+.calc-upper-div-controls .right-items {
+    color: var(--input-display-font-color);
 }
 
 .calc-display-controls .theme-btn {
@@ -84,18 +94,28 @@ body {
 }
 
 .darkmode .calc-display-controls .theme-btn i:first-child {
-    display: block;
+    display: none;
 }
 
 .darkmode .calc-display-controls .theme-btn i:last-child {
-    display: none;
+    display: block;
+}
+
+.calc-display-history {
+    color: var(--input-display-font-color);
+    font-size: 18px;
+}
+
+.calc-display-value {
+    color: var(--input-display-font-color);
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .calc-keyboard {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    background-color:var(--display-keyboard-bg);
     gap: 1rem;
 }
 
