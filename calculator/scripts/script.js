@@ -56,8 +56,33 @@ for (let key of keys) {
                 displayOutput.innerHTML = "Error";
             }
         } else {
-            userInput += value;
-            displayOutput.innerHTML = userInput;
+            if (validateOperators(value)) {
+                userInput += value;
+                displayOutput.innerHTML = userInput;
+            }
         }
     })
 }
+
+// function for preventing two operators in a row and multiple decimal points 
+
+function validateOperators(value) {
+    let operators = ["+", "-", "*", "/", "%"];
+    let last_input_value = userInput.slice(-1);
+
+    if (value == "." && last_input_value == ".") {
+        return false;
+    }
+
+    if (operators.includes(value)) {
+        if (operators.includes(last_input_value)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    return true;
+}
+
+
