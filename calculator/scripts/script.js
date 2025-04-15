@@ -10,7 +10,7 @@ setInterval(() => {
 
 const themeButton = document.getElementById("toggle-btn");
 themeButton.addEventListener('click', () => {
-    darkmodeStatus = localStorage.getItem('darkmode');
+    darkmodeStatus = localStorage.getItem('darkmodeStatus');
     darkmodeStatus !== "active" ? enableDarkMode() : disableDarkMode();
 
 })
@@ -67,7 +67,7 @@ for (let key of keys) {
 // function for preventing two operators in a row and multiple decimal points 
 
 function validateOperators(value) {
-    let operators = ["+", "-", "*", "/", "%"];
+    let operators = ["+", "-", "*", "/", "%",];
     let last_input_value = userInput.slice(-1);
 
     if (value == "." && last_input_value == ".") {
@@ -86,3 +86,22 @@ function validateOperators(value) {
 }
 
 
+document.addEventListener("keydown", (event) => {
+    let keyPressed = event.key;
+
+
+    if (keyPressed === "Enter") keyPressed = "=";
+    if (keyPressed === "Backspace") keyPressed = "backspace";
+    
+
+    const allButtons = document.querySelectorAll("button[data-key]");
+    console.log(allButtons,"all")
+    const buttonArray = Array.from(allButtons);
+    const button = buttonArray.find(btn => btn.dataset.key === keyPressed);
+
+    if (button) {
+        button.classList.add("active");
+        setTimeout(() => button.classList.remove("active"), 150);
+        button.click();
+    }
+});

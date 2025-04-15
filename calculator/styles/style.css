@@ -186,3 +186,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+button.active {
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+}
